@@ -1,0 +1,33 @@
+python -m venv env
+
+env\Scripts\activate
+
+pip install django
+
+django-admin startproject my_django_app
+
+cd my_django_app
+
+python manage.py startapp form
+
+in setting goto installed app and add form app
+
+python manage.py runserver
+
+python manage.py migrate
+
+python mamage.py createsuperuser
+
+python manage.py runserver
+
+
+create template/h/index.html
+
+in views 
+def index(request):	
+	return render(request,"h/index.html") 	
+
+
+in urls
+from form.views import index
+under url pattern path ('index/'index)
